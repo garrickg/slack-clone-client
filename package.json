@@ -1,0 +1,33 @@
+{
+  "name": "slack-clone-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "apollo-client-preset": "^1.0.8",
+    "apollo-link-http": "^1.5.1",
+    "graphql": "^0.13.1",
+    "graphql-tag": "^2.8.0",
+    "mobx": "^3.5.1",
+    "mobx-react": "^4.4.2",
+    "react": "^16.2.0",
+    "react-apollo": "^2.0.4",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "semantic-ui-css": "^2.3.0",
+    "semantic-ui-react": "^0.78.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0"
+  }
+}
