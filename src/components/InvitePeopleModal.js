@@ -20,8 +20,8 @@ const InvitePeopleModal = ({
 }) => (
   <Modal
     open={open}
-    onClose={() => {
-      onClose();
+    onClose={(e) => {
+      onClose(e);
       handleReset();
     }}
   >
@@ -43,9 +43,9 @@ const InvitePeopleModal = ({
           <Button
             negative
             fluid
-            onClick={() => {
+            onClick={(e) => {
               handleReset();
-              onClose();
+              onClose(e);
             }}
             disabled={isSubmitting}
           >
