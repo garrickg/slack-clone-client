@@ -10,6 +10,8 @@
     "apollo-link-context": "^1.0.7",
     "apollo-link-error": "^1.0.7",
     "apollo-link-http": "^1.5.1",
+    "apollo-link-ws": "^1.0.7",
+    "apollo-utilities": "^1.0.10",
     "babel-eslint": "^8.2.2",
     "formik": "^0.11.11",
     "graphql": "^0.13.1",
@@ -25,7 +27,8 @@
     "react-scripts": "1.1.1",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.74.2",
-    "styled-components": "^3.1.6"
+    "styled-components": "^3.1.6",
+    "subscriptions-transport-ws": "^0.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
