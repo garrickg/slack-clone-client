@@ -9,9 +9,10 @@ import Header from '../components/Header';
 import SendMessage from '../components/SendMessage';
 import AppLayout from '../components/AppLayout';
 import Sidebar from '../containers/Sidebar';
-import MessageContainer from '../containers/MessageContainer';
+import DirectMessageContainer from '../containers/DirectMessageContainer';
 
 const ViewTeam = ({
+  mutate,
   data: { loading, me },
   match: { params: { teamId, userId } },
 }) => {
@@ -36,17 +37,29 @@ const ViewTeam = ({
   return (
     <AppLayout>
       <Sidebar teams={teamInitials} team={team} username={username} />
-      { /* <Header channelName={channel.name} />
-  <MessageContainer channelId={channel.id} /> */}
-      <SendMessage onSubmit={() => {}} placeholder={`@${userId}`} />
+      <Header channelName={"Someone's Username"} />
+      <DirectMessageContainer teamId={teamId} userId={userId} />
+      <SendMessage
+        onSubmit={async (text) => {
+        const response = await mutate({
+          variables: {
+            text,
+            receiverId: userId,
+            teamId,
+          },
+        });
+        console.log(response);
+      }}
+        placeholder={`@${userId}`}
+      />
     </AppLayout>
   );
 };
 
 const createDirectMessageMutation = gql`
-mutation($channelId: Int!, $text: String!) {
-  createMessage(channelId: $channelId, text: $text)
-}
+  mutation ($receiverId: Int!, $text: String!, $teamId: Int!) {
+    createDirectMessage(receiverId: $receiverId, text: $text, teamId: $teamId)
+  }
 `;
 
 export default compose(
